@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="app">
-            <Home></Home>
+            <my-component></my-component>
         </div>
         {{-- <script src="/js/app.js"></script> --}}
         <script src="{{asset('/js/app.js')}}"></script>
