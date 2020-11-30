@@ -7,8 +7,9 @@
     </head>
     <body>
         <div id="app">
-            <example>dsfsdfds</example>
+            <Home></Home>
         </div>
-        <script src="/js/app.js"></script>
+        {{-- <script src="/js/app.js"></script> --}}
+        <script src="{{asset('/js/app.js')}}"></script>
     </body>
 </html>
