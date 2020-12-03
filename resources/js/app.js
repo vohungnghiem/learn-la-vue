@@ -2,8 +2,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-Vue.component('MyComponent',require('./components/MyComponent.vue').default)
+// Vue.component('user-dashboard', require('./components/UserDashboard.vue').default);
+Vue.component('user-dashboard', require('./components/LifeCycle.vue').default);
 
 const app = new Vue({
     el: '#app'
-})
+});

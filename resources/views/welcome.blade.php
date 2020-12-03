@@ -4,10 +4,11 @@
         <title>Laravel</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" type="text/css" href="/css/app.css">
+        
     </head>
     <body>
         <div id="app">
-            <my-component></my-component>
+            <user-dashboard></user-dashboard>
         </div>
         {{-- <script src="/js/app.js"></script> --}}
         <script src="{{asset('/js/app.js')}}"></script>

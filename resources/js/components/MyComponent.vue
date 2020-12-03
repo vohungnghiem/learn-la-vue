@@ -1,9 +1,10 @@
 <template>
-    <div class="my-component">
-        <div>Message type: {{ message.type }}</div>
-        <div>Message text: {{ message.text }}</div>
-        <div><button @click="changeType">Change type</button></div>
-        <div><button @click="changeText">Change text</button></div>
+    <div class="list-rendering">
+        <ul>
+            <li v-for="todo of listCompleteTodo" :key="todo.id" >
+              {{ todo.name }} - {{ todo.isComplete }}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -11,41 +12,29 @@
     export default {
         data() {
             return {
-            	message: {
-            		type: 'greeting',
-            		text: 'How are you?'
-            	}
-            }
-        },
-        methods: {
-            changeType() {
-                this.message.type = 'this is new type'
-            },
-            changeText() {
-                this.message.text = 'this is new text'
+                todos: [
+                    {
+                        name: 'to do 1',
+                        isComplete: true
+                    },
+                    {
+                        name: 'to do 2',
+                        isComplete: false
+                    },
+                    {
+                        name: 'to do 3',
+                        isComplete: true
+                    },
+                ]
             }
         },
         computed: {
-            getType() {
-                return this.message.type
-            },
-            getText() {
-                return this.message.text
-            }
-        },
-        watch: {
-            getType() {
-            	console.log('type changed')
-            },
-            getText() {
-            	console.log(this.message)
+            listCompleteTodo() {
+                return this.todos.filter(item => item.isComplete)
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .my-component {
-        color: red;
-    }
 </style>
